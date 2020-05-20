@@ -1,1 +1,1 @@
-#### My mac environment dotfiles and setup
+#### My mac environment dotfiles
