@@ -8,7 +8,7 @@ export ZSH=$HOME/.oh-my-zsh
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="spaceship"
+ZSH_THEME="robbyrussell"
 
 ZSH_DISABLE_COMPFIX=true
 
@@ -20,3 +20,18 @@ ZSH_DISABLE_COMPFIX=true
 plugins=(git zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
+
+# Set Spaceship ZSH as a prompt
+autoload -U promptinit; promptinit
+prompt spaceship
+
+export GOPATH=$HOME/Developer/Go
+export PATH=$PATH:$GOPATH/bin
+
+encode() {
+  echo -n "$1" | base64
+}
+
+decode() {
+  echo -n "$1" | base64 -D
+}
